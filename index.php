@@ -27,16 +27,12 @@ if (!file_exists($cFile) || filemtime($pFile) > filemtime($cFile)) {
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
-          href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet"
-          href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+          href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
     <link rel="stylesheet"
           href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="/media/style.css"/>
+    <link rel="stylesheet" href="/dist/css/app.css"/>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -303,18 +299,13 @@ if (!file_exists($cFile) || filemtime($pFile) > filemtime($cFile)) {
     </div>
 </footer>
 
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- DEV -->
+    <script data-main="/src/js/main"
+            src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-
-<script type="text/javascript"
-        src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-
-<script type="text/javascript" src="/media/core.js"></script>
+    <!-- PROD -->
+    <!-- script data-main="/dist/js/modules"
+            src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script -->
 
 </body>
 </html>
