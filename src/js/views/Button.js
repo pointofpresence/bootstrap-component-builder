@@ -1,8 +1,10 @@
 define("views/Button", [
     "backbone",
     "templates",
-    "jquery"
-], function (Backbone, templates, $) {
+    "jquery",
+
+    "lib/Components"
+], function (Backbone, templates, $, components) {
     "use strict";
 
     return Backbone.View.extend({
