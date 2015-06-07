@@ -2,7 +2,6 @@ define("templates", function (require) {
     "use strict";
 
     return {
-        outputLink:            require("tpl!templates/outputLink.ejs"),
         outputAccordion:       require("tpl!templates/outputAccordion.ejs"),
         outputAlert:           require("tpl!templates/outputAlert.ejs"),
         outputBreadcrumbs:     require("tpl!templates/outputBreadcrumbs.ejs"),
@@ -38,6 +37,6 @@ define("templates", function (require) {
         outputThumbnail:       require("tpl!templates/outputThumbnail.ejs"),
         outputThumbnailCustom: require("tpl!templates/outputThumbnailCustom.ejs"),
         outputTooltip:         require("tpl!templates/outputTooltip.ejs"),
-        outputWell:            require("tpl!templates/outputWell.ejs"),
+        outputWell:            require("tpl!templates/outputWell.ejs")
     };
 });
