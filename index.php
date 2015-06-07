@@ -9,10 +9,6 @@ $content = include($pFile);
 $components = $content['components'];
 $jscomponents = $content['js'];
 
-if (!file_exists($cFile) || filemtime($pFile) > filemtime($cFile)) {
-    $js = 'var components = ' . json_encode(array_merge($components, $jscomponents)) . ';';
-    file_put_contents($cFile, $js);
-}
 ?>
 
 <head>
@@ -39,8 +35,6 @@ if (!file_exists($cFile) || filemtime($pFile) > filemtime($cFile)) {
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
     <![endif]-->
-
-    <script src="/media/components.js"></script>
 </head>
 
 <body>
