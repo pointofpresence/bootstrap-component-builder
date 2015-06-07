@@ -117,6 +117,7 @@ function versionIncrement() {
     ].join(".");
 
     writeJsonFile("./package.json", pkg);
+    console.log("Version: ", pkg.version);
 }
 
 function readJsonFile(file, options) {
