@@ -2,6 +2,6 @@ define("templates", function (require) {
     "use strict";
 
     return {
-        Output: require("tpl!templates/Output.ejs")
+        outputLink: require("tpl!templates/outputLink.ejs")
     };
 });

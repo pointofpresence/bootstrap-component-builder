@@ -1,0 +1,3 @@
+<h<% size != '' ? print(size) : '5' %>>
+    <span class="label<% type != '' ? print(' ' + type) : '' %>"><%= name %></span>
+</h<% size != '' ? print(size) : '5' %>>

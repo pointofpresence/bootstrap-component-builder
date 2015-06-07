@@ -6,8 +6,7 @@ define("views/Button", [
     "use strict";
 
     return Backbone.View.extend({
-        template: templates.Output,
-        el:       "#result",
+        el: "#result",
 
         initialize: function () {
             this.$("#type-" + this.model.get("gadget")).prop("checked", true);
@@ -31,45 +30,30 @@ define("views/Button", [
         },
 
         render: function () {
-            var that = this;
+            var g = that.model.get("gadget");
 
-            this.render.draw = function () {
-                var g = that.model.get("gadget");
-
-                var d = {
-                    type:          components[that.model.get("gadget")]["color"][that.model.get("type")],
-                    size:          components[that.model.get("gadget")]["size"][that.model.get("size")],
-                    fullwidth:     that.model.get("fullwidth"),
-                    iconplacement: that.model.get("iconplacement"),
-                    icon:          that.model.get("icon"),
-                    name:          that.model.get("name")
-                };
-
-                var t = that.render.template[g];
-                var e = _.template(t, d);
-
-                that.$el.find("#button").html(e);
-                that.$el.find("#output").val(e);
-
-                if (components[that.model.get("gadget")]["url"]) {
-                    that.$el.find("#button").append(
-                        _.template('<p class="no-bottom has-top"><a target="_blank" href="<%= url %>"><span class="glyphicon glyphicon-info-sign"></span> See more about <%= name %></a></p>', {
-                            url:  components[that.model.get("gadget")]["url"],
-                            name: components[that.model.get("gadget")]["name"]
-                        })
-                    );
-                }
+            var d = {
+                type:          components[this.model.get("gadget")]["color"][this.model.get("type")],
+                size:          components[this.model.get("gadget")]["size"][this.model.get("size")],
+                fullwidth:     this.model.get("fullwidth"),
+                iconplacement: this.model.get("iconplacement"),
+                icon:          this.model.get("icon"),
+                name:          this.model.get("name")
             };
 
-            this.render.template = this.render.template || {};
+            var t = templates["output" + g];
+            var e = t(d);
 
-            if (!this.render.template[this.model.get("gadget")]) {
-                $.get('templates/output' + this.model.get("gadget"), function (template) {
-                    that.render.template[that.model.get("gadget")] = template;
-                    that.render.draw();
-                })
-            } else {
-                that.render.draw();
+            this.$("#button").html(e);
+            this.$("#output").val(e);
+
+            if (components[this.model.get("gadget")]["url"]) {
+                that.$("#button").append(
+                    _.template('<p class="no-bottom has-top"><a target="_blank" href="<%= url %>"><span class="glyphicon glyphicon-info-sign"></span> See more about <%= name %></a></p>', {
+                        url:  components[this.model.get("gadget")]["url"],
+                        name: components[this.model.get("gadget")]["name"]
+                    })
+                );
             }
         }
     });
