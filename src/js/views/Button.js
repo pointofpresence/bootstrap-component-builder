@@ -30,7 +30,7 @@ define("views/Button", [
         },
 
         render: function () {
-            var g = that.model.get("gadget");
+            var g = this.model.get("gadget");
 
             var d = {
                 type:          components[this.model.get("gadget")]["color"][this.model.get("type")],
@@ -48,7 +48,7 @@ define("views/Button", [
             this.$("#output").val(e);
 
             if (components[this.model.get("gadget")]["url"]) {
-                that.$("#button").append(
+                this.$("#button").append(
                     _.template('<p class="no-bottom has-top"><a target="_blank" href="<%= url %>"><span class="glyphicon glyphicon-info-sign"></span> See more about <%= name %></a></p>', {
                         url:  components[this.model.get("gadget")]["url"],
                         name: components[this.model.get("gadget")]["name"]
