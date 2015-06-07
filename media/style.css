@@ -1,0 +1,151 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+body > .container {
+    padding: 70px 15px 0;
+}
+
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.bs-glyphicons {
+    list-style: none;
+    padding: 0;
+}
+
+.bs-glyphicons li {
+    float: left;
+    line-height: 20px;
+}
+
+h2 {
+    margin-top: 0;
+    line-height: 0.7;
+}
+
+h4.top {
+    background-color: #EEE;
+    padding: 6px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    margin-top: 0;
+    /*text-align: center;*/
+    margin-bottom: 10px;
+}
+
+.no-bottom {
+    margin-bottom: 0;
+}
+
+.has-top {
+    margin-top: 10px;
+}
+
+body > div > div.row > div.col-md-6 > .well,
+body > div > div.well {
+    padding: 10px;
+}
+
+#types {
+    text-align: center;
+    width: 100%;
+}
+
+#types .btn-group-vertical > .btn, .btn-group > .btn {
+    float: none;
+}
+
+#sizes .row {
+    margin-bottom: 10px;
+    line-height: 45px;
+}
+
+#sizes .row .col-sm-3 {
+    text-align: center;
+}
+
+#icons li > a {
+    padding: 5px 5px;
+}
+
+#result .form-group {
+    margin: 0;
+}
+
+#result .form-group > div {
+    padding-left: 0;
+}
+
+#result .form-group .radio {
+    margin-bottom: 0;
+}
+
+#button h1,
+#button h2,
+#button h3,
+#button h4,
+#button h5,
+#button h6 {
+    margin: 0;
+}
+
+#button > .alert,
+#button > .progress,
+#button > .list-group,
+#button > .well,
+#button > .breadcrumb,
+#button > nav > .pagination,
+#button > nav > .pager,
+#button > .page-header,
+#button .thumbnail,
+#button .panel,
+#collapseExample > div,
+#button #accordion,
+#button nav {
+    margin: 0;
+}
+
+#button #navbar-example2 {
+    margin-bottom: 20px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /* Хак для IE 6 и 7 */
+}
+
+.empty-icon {
+    padding: 5px 7px;
+}

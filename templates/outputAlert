@@ -1,0 +1,3 @@
+<div class="alert<% type != '' ? print(' ' + type) : '' %>" role="alert">
+    <% icon != '' ? print('<span class="' + icon + '" aria-hidden="true"></span> ') : null %><strong>Strong text!</strong> <%= name %>
+</div>

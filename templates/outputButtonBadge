@@ -1,0 +1,7 @@
+<button class="btn<% fullwidth != false ? print(' btn-block') : '' %><% size != '' ? print(' ' + size) : '' %><% type != '' ? print(' ' + type) : '' %>">
+    <% if (iconplacement != 'right') {
+        icon != '' ? print('<span class="' + icon + '"></span> ') : null
+    } %><%= name %> <span class="badge">42</span><% if (iconplacement == 'right') {
+        icon != '' ? print(' <span class="' + icon + '"></span>') : null
+    } %>
+</button>

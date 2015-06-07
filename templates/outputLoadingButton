@@ -1,0 +1,14 @@
+<button id="myButton" data-loading-text="Loading..." autocomplete="off" class="btn<% fullwidth != false ? print(' btn-block') : '' %><% size != '' ? print(' ' + size) : '' %><% type != '' ? print(' ' + type) : '' %>">
+    <% if (iconplacement != 'right') {
+        icon != '' ? print('<span class="' + icon + '"></span> ') : null
+    } %><%= name %><% if (iconplacement == 'right') {
+        icon != '' ? print(' <span class="' + icon + '"></span>') : null
+    } %>
+</button>
+<script>
+    $('#myButton').on('click', function () {
+        var $btn = $(this).button('loading');
+        /* business logic... */
+        $btn.button('reset');
+    })
+</script>
