@@ -25,12 +25,47 @@ require.config({
 
 require([
     "jquery",
-    "views/Test",
+
+    "views/Button",
+    "views/Size",
+    "views/Color",
+    "views/Name",
+    "views/Icon",
+
+    "models/Button",
+
     "bootstrap"
-], function ($, TestView) {
+], function ($, ButtonView, SizeView, ColorView, NameView, IconView, ButtonModel) {
     "use strict";
 
     $(function () {
-        var testView = new TestView;
+        var button = new ButtonModel;
+        var buttonView = new ButtonView({model: button});
+        var sizesView = new SizeView({model: button});
+        var typesView = new ColorView({model: button});
+        var nameView = new NameView({model: button});
+        var iconView = new IconView({model: button});
+        var icons = [];
+
+        $(".bs-glyphicons").children().each(function () {
+            var classStr = $(this).find("a").find("span").attr("class");
+            icons.push(classStr)
+        });
+
+        $(".typeahead").typeahead({source: icons, items: 12});
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('a.result-tab').on('shown.bs.tab', function (e) {
+            $($(e.target).attr("href"))
+                .find("input:first")
+                .trigger("click"); // newly activated tab
+
+            $($(e.relatedTarget).attr("href"))
+                .find("input")
+                .prop("checked", false); // previous active tab
+
+            buttonView.render();
+        })
     });
 });
