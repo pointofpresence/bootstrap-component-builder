@@ -9,7 +9,8 @@ var gulp       = require("gulp"),               // Gulp JS
     ejsmin     = require("gulp-ejsmin"),        // EJS min
     header     = require("gulp-header"),        // banner maker
     mkdirp     = require("mkdirp"),             // mkdir
-    fs         = require("fs");                 // fs
+    fs         = require("fs"),                 // fs
+    replace    = require("gulp-replace");       // replace
 
 var
     src     = "./src",
@@ -92,6 +93,7 @@ function buildHtml() {
     };
 
     gulp.src("./index-src.html")
+        .pipe(replace("/src/js/main", "/dist/js/modules"))
         .pipe(minifyHTML(opts))
         .pipe(out("./index.html"));
 }
