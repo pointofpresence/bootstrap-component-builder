@@ -2,18 +2,22 @@ define("views/Button", [
     "backbone",
     "templates",
     "jquery",
+    "underscore",
 
     "lib/Components"
-], function (Backbone, templates, $, components) {
+], function (Backbone, templates, $, _, components) {
     "use strict";
 
     return Backbone.View.extend({
         el: "#result",
 
         initialize: function () {
-            this.$("#type-" + this.model.get("gadget")).prop("checked", true);
+            this.components = _.extend({}, components.js, components.components);
             this.model.on("change", this.render, this);
-            this.render()
+
+            this.firstTime = true;
+            this.render();
+            this.$("#type-" + this.model.get("gadget")).prop("checked", true);
         },
 
         events: {
@@ -32,11 +36,23 @@ define("views/Button", [
         },
 
         render: function () {
+            if (this.firstTime) {
+                this.firstTime = false;
+
+                this.$("#tab-component .form-group").html(templates.Components({
+                    items: components.components
+                }));
+
+                this.$("#tab-snippet .form-group").html(templates.Components({
+                    items: components.js
+                }));
+            }
+
             var g = this.model.get("gadget");
 
             var d = {
-                type:          components[this.model.get("gadget")]["color"][this.model.get("type")],
-                size:          components[this.model.get("gadget")]["size"][this.model.get("size")],
+                type:          this.components[this.model.get("gadget")]["color"][this.model.get("type")],
+                size:          this.components[this.model.get("gadget")]["size"][this.model.get("size")],
                 fullwidth:     this.model.get("fullwidth"),
                 iconplacement: this.model.get("iconplacement"),
                 icon:          this.model.get("icon"),
@@ -49,11 +65,11 @@ define("views/Button", [
             this.$("#button").html(e);
             this.$("#output").val(e);
 
-            if (components[this.model.get("gadget")]["url"]) {
+            if (this.components[this.model.get("gadget")]["url"]) {
                 this.$("#button").append(
                     templates.More({
-                        url:  components[this.model.get("gadget")]["url"],
-                        name: components[this.model.get("gadget")]["name"]
+                        url:  this.components[this.model.get("gadget")]["url"],
+                        name: this.components[this.model.get("gadget")]["name"]
                     })
                 );
             }

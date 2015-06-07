@@ -25,6 +25,7 @@ require.config({
 
 require([
     "jquery",
+    "underscore",
 
     "views/Button",
     "views/Size",
@@ -34,42 +35,41 @@ require([
 
     "models/Button",
 
+    "lib/Icons",
     "lib/Search",
+
     "bootstrap"
-], function ($, ButtonView, SizeView, ColorView, NameView, IconView, ButtonModel) {
+], function ($, _,
+             ButtonView, SizeView, ColorView, NameView, IconView,
+             ButtonModel,
+             icons) {
     "use strict";
 
     $(function () {
-        var button = new ButtonModel;
-        var buttonView = new ButtonView({model: button});
-        var sizesView = new SizeView({model: button});
-        var typesView = new ColorView({model: button});
-        var nameView = new NameView({model: button});
-        var iconView = new IconView({model: button});
-        var icons = [];
+        var button = new ButtonModel,
+            buttonView = new ButtonView({model: button}),
+            sizesView = new SizeView({model: button}),
+            typesView = new ColorView({model: button}),
+            nameView = new NameView({model: button}),
+            iconView = new IconView({model: button});
 
-        $(".bs-glyphicons").children().each(function () {
-            var classStr = $(this).find("a").find("span").attr("class");
-            icons.push(classStr)
+        var iconClasses = [];
+
+        _.each(icons, function (i) {
+            if (i) {
+                iconClasses.push("glyphicon glyphicon-" + i);
+            }
         });
 
         $(".typeahead").typeahead({
-            source: icons,
+            source: iconClasses,
             items:  12
         });
 
+        $(document).on("click", "a[href='#']", function (e) {
+            e.preventDefault();
+        });
+
         $('[data-toggle="tooltip"]').tooltip();
-
-        $('a.result-tab').on('shown.bs.tab', function (e) {
-            $($(e.target).attr("href"))
-                .find("input:first")
-                .trigger("click"); // newly activated tab
-
-            $($(e.relatedTarget).attr("href"))
-                .find("input")
-                .prop("checked", false); // previous active tab
-
-            buttonView.render();
-        })
     });
 });
