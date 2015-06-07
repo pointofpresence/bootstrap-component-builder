@@ -1,7 +1,0 @@
-<button type="button" class="bs-docs-popover btn<% fullwidth != false ? print(' btn-block') : '' %><% size != '' ? print(' ' + size) : '' %><% type != '' ? print(' ' + type) : '' %>" data-toggle="popover" title="Popover title" data-content="<%= name %>">
-    <% if (iconplacement != 'right') {
-        icon != '' ? print('<span class="' + icon + '"></span> ') : null
-    } %>Click to toggle popover<% if (iconplacement == 'right') {
-        icon != '' ? print(' <span class="' + icon + '"></span>') : null
-    } %>
-</button>
