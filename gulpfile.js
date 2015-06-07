@@ -1,16 +1,18 @@
 //noinspection JSLint
-var gulp = require("gulp");                     // Gulp JS
-var out = require("gulp-out");                  // output to file
-var minifyHTML = require("gulp-minify-html");   // min HTML
-var csso = require("gulp-csso");                // CSS min
-var less = require("gulp-less");                // LESS
-var concat = require("gulp-concat");            // concat
-var uglify = require("gulp-uglify");            // JS min
-var ejsmin = require("gulp-ejsmin");            // EJS min
-var header = require("gulp-header");            // banner maker
-var mkdirp = require("mkdirp");                 // mkdir
+var gulp       = require("gulp"),               // Gulp JS
+    out        = require("gulp-out"),           // output to file
+    minifyHTML = require("gulp-minify-html"),   // min HTML
+    csso       = require("gulp-csso"),          // CSS min
+    less       = require("gulp-less"),          // LESS
+    concat     = require("gulp-concat"),        // concat
+    uglify     = require("gulp-uglify"),        // JS min
+    ejsmin     = require("gulp-ejsmin"),        // EJS min
+    header     = require("gulp-header"),        // banner maker
+    mkdirp     = require("mkdirp"),             // mkdir
+    fs         = require("fs");                 // fs
 
-var src     = "./src",
+var
+    src     = "./src",
     srcJs   = src + "/js",
     srcLess = src + "/less";
 
@@ -105,6 +107,34 @@ function buildCss() {
         .pipe(out(distCss + "/app.css"));
 }
 
+function versionIncrement() {
+    var v = (pkg.version || "1.0.0").split(".");
+
+    pkg.version = [
+        v[0] ? v[0] : 1,
+        v[1] ? v[1] : 0,
+        (v[2] ? parseInt(v[2]) : 0) + 1
+    ].join(".");
+
+    writeJsonFile("./package.json", pkg);
+}
+
+function readJsonFile(file, options) {
+    try {
+        return JSON.parse(fs.readFileSync(file, options))
+    } catch (err) {
+        return null
+    }
+}
+
+function writeJsonFile(file, obj, options) {
+    var spaces = 2,
+        str = JSON.stringify(obj, null, spaces) + '\n';
+
+    //noinspection JSUnresolvedFunction
+    return fs.writeFileSync(file, str, options);
+}
+
 gulp.task("build_css", buildCss);
 gulp.task("build_html", buildHtml);
 gulp.task("build_tpl_plugin", buildTplPlugin);
@@ -124,6 +154,7 @@ gulp.task("watch", function () {
 });
 
 gulp.task("build", function () {
+    versionIncrement();
     buildCss();
     buildHtml();
     buildTplPlugin();
