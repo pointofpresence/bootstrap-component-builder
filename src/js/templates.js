@@ -2,6 +2,8 @@ define("templates", function (require) {
     "use strict";
 
     return {
+        More: require("tpl!templates/More.ejs"),
+
         outputAccordion:       require("tpl!templates/outputAccordion.ejs"),
         outputAlert:           require("tpl!templates/outputAlert.ejs"),
         outputBreadcrumbs:     require("tpl!templates/outputBreadcrumbs.ejs"),
