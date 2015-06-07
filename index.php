@@ -252,27 +252,7 @@ $jscomponents = $content['js'];
 
                 <div class="row has-top">
                     <div class="col-md-12">
-                        <ul class="bs-glyphicons">
-                            <?php foreach (include('icons.php') as $i): ?>
-                                <?php
-                                if (empty($i)) {
-                                    $ic = 'empty-icon';
-                                    $t  = 'Remove Icon';
-                                } else {
-                                    $ic = 'glyphicon-' . $i;
-                                    $t  = 'glyphicon-' . $i;
-                                }
-                                ?>
-
-                                <li>
-                                    <a href="#" class="btn btn-default"
-                                       data-toggle="tooltip" data-placement="bottom"
-                                       title="<?php echo $t; ?>">
-                                        <span class="glyphicon <?php echo $ic; ?>"></span>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+                        <ul class="bs-glyphicons">Loading...</ul>
                     </div>
                 </div>
             </div>

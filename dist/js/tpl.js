@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2015 pointofpresence
  * bootstrap-component-builder - Online component builder for Bootstrap 3
- * @version v1.0.14
+ * @version v1.0.15
  * @link https://github.com/pointofpresence/bootstrap-component-builder
  * @license MIT
  */

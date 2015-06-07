@@ -1,17 +1,30 @@
 define("views/Icon", [
     "backbone",
-    "jquery"
-], function (Backbone, $) {
+    "jquery",
+    "templates",
+
+    "lib/Icons"
+], function (Backbone, $, templates, icons) {
     "use strict";
 
     return Backbone.View.extend({
-        el: "#icons",
+        el:       "#icons",
+        template: templates.Icons,
 
         events: {
             "click .bs-glyphicons a":      "update",
             "click #icon-position button": "updatePosition",
             "click #icon-color button":    "updateColor",
             "change input#search":         "updateFromSearch"
+        },
+
+        initialize: function () {
+            this.render();
+        },
+
+        render: function () {
+            this.$(".bs-glyphicons").html(this.template({icons: icons}));
+            return this;
         },
 
         updatePosition: function (e) {
