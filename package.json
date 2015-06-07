@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-component-builder",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Online component builder for Bootstrap 3",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

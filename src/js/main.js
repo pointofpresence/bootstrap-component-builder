@@ -34,6 +34,7 @@ require([
 
     "models/Button",
 
+    "lib/Search",
     "bootstrap"
 ], function ($, ButtonView, SizeView, ColorView, NameView, IconView, ButtonModel) {
     "use strict";
@@ -52,7 +53,10 @@ require([
             icons.push(classStr)
         });
 
-        $(".typeahead").typeahead({source: icons, items: 12});
+        $(".typeahead").typeahead({
+            source: icons,
+            items:  12
+        });
 
         $('[data-toggle="tooltip"]').tooltip();
 
