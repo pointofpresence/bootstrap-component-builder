@@ -4,7 +4,7 @@ define("lib/Icons", [], function () {
     "use strict";
 
     return [
-        "", "adjust", "align-center", "align-justify", "align-left", "align-right",
+        "adjust", "align-center", "align-justify", "align-left", "align-right",
         "arrow-down", "arrow-left", "arrow-right", "arrow-up", "asterisk", "backward",
         "ban-circle", "barcode", "bell", "bold", "book", "bookmark", "briefcase",
         "bullhorn", "calendar", "camera", "certificate", "check", "chevron-down",

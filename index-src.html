@@ -27,194 +27,239 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse"
+                            data-target="#bs-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Component Builder for Bootstrap 3</a>
-                </div>
 
-                <div id="navbar" class="collapse navbar-collapse"></div>
-                <!--/.nav-collapse -->
+                    <a class="navbar-brand" href="#">Component builder for Bootstrap 3</a></div>
+                <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://pointofpresence.ru">point.of.presence</a></li>
+                        <li><a href="http://resampled.ru">ReSampled</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="well">
-                        <h4 class="top">
-                            <span class="glyphicon glyphicon-share-alt"></span> Output
-                        </h4>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;Output
+                            </h3>
+                        </div>
 
-                        <div id="result">
-                            <div id="button">Loading...</div>
+                        <div class="panel-body">
+                            <div id="result">
+                                <div id="button">Loading...</div>
 
-                            <div class="clearfix"></div>
+                                <br>
 
-                            <p class="no-bottom has-top">
-                    <textarea id="output" class="form-control input-block-level"
-                              placeholder=""></textarea>
-                            </p>
+                                <p class="no-bottom">
+                                    <textarea id="output" class="form-control input-block-level"
+                                              placeholder=""></textarea>
+                                </p>
 
-                            <div role="tabpanel" class="has-top">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active">
-                                        <a href="#tab-component" aria-controls="component" role="tab"
-                                           data-toggle="tab" class="result-tab">Components</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#tab-snippet" aria-controls="snippet" role="tab"
-                                           data-toggle="tab" class="result-tab">JS</a>
-                                    </li>
-                                </ul>
+                                <br>
 
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="tab-component">
-                                        <form>
-                                            <div class="form-group">Loading...</div>
-                                        </form>
-                                    </div>
+                                <div role="tabpanel" class="has-top">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab-component" aria-controls="component" role="tab"
+                                               data-toggle="tab" class="result-tab">Components</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab-snippet" aria-controls="snippet" role="tab"
+                                               data-toggle="tab" class="result-tab">JS</a>
+                                        </li>
+                                    </ul>
 
-                                    <div role="tabpanel" class="tab-pane" id="tab-snippet">
-                                        <form>
-                                            <div class="form-group">Loading...</div>
-                                        </form>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="tab-component">
+                                            <form>
+                                                <div class="form-group">Loading...</div>
+                                            </form>
+                                        </div>
+
+                                        <div role="tabpanel" class="tab-pane" id="tab-snippet">
+                                            <form>
+                                                <div class="form-group">Loading...</div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="clearfix"></div>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="well">
-                        <h4 class="top">
-                            <span class="glyphicon glyphicon-font"></span> Text
-                        </h4>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Text
+                            </h3>
+                        </div>
 
-                        <p id="input" class="no-bottom">
-                            <input id="name" autocomplete="off" class="form-control" type="text"
-                                   placeholder="Default text here">
-                        </p>
-                    </div>
-
-                    <div class="well">
-                        <h4 class="top">
-                            <span class="glyphicon glyphicon-adjust"></span> Color
-                        </h4>
-
-                        <div id="types" class="btn-group">
-                            <button name="color" type="button" class="btn btn-default"
-                                    data-value="0" value="btn-default">Default
-                            </button>
-
-                            <button name="color" type="button" class="btn btn-primary"
-                                    data-value="1" value="btn-primary">Primary
-                            </button>
-
-                            <button name="color" type="button" class="btn btn-info"
-                                    data-value="2" value="btn-info">Info
-                            </button>
-
-                            <button name="color" type="button" class="btn btn-success"
-                                    data-value="3" value="btn-success">Success
-                            </button>
-
-                            <button name="color" type="button" class="btn btn-warning"
-                                    data-value="4" value="btn-warning">Warning
-                            </button>
-
-                            <button name="color" type="button" class="btn btn-danger"
-                                    data-value="5" value="btn-danger">Danger
-                            </button>
+                        <div class="panel-body">
+                            <p id="input" class="no-bottom">
+                                <input id="name" autocomplete="off" class="form-control" type="text"
+                                       placeholder="Default text here">
+                            </p>
                         </div>
                     </div>
 
-                    <div class="well">
-                        <h4 class="top">
-                            <span class="glyphicon glyphicon-fullscreen"></span> Size
-                        </h4>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-adjust"></span>&nbsp;&nbsp;Color
+                            </h3>
+                        </div>
 
-                        <div id="sizes">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <button class="btn btn-xs btn-primary" data-value="0"
-                                            type="button">X-Small
-                                    </button>
+                        <div class="panel-body">
+                            <div id="types">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button name="color" type="button" class="btn btn-default btn-block"
+                                                data-value="0" value="btn-default">Default
+                                        </button>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <button name="color" type="button" class="btn btn-primary btn-block"
+                                                data-value="1" value="btn-primary">Primary
+                                        </button>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <button name="color" type="button" class="btn btn-info btn-block"
+                                                data-value="2" value="btn-info">Info
+                                        </button>
+                                    </div>
                                 </div>
 
-                                <div class="col-sm-3">
-                                    <button class="btn btn-sm btn-primary" data-value="1"
-                                            type="button">Small
-                                    </button>
-                                </div>
+                                <br>
 
-                                <div class="col-sm-3">
-                                    <button class="btn btn-primary" data-value="2"
-                                            type="button">Default
-                                    </button>
-                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button name="color" type="button" class="btn btn-success btn-block"
+                                                data-value="3" value="btn-success">Success
+                                        </button>
+                                    </div>
 
-                                <div class="col-sm-3">
-                                    <button class="btn btn-primary btn-lg" data-value="3"
-                                            type="button">Large
-                                    </button>
+                                    <div class="col-lg-4">
+                                        <button name="color" type="button" class="btn btn-warning btn-block"
+                                                data-value="4" value="btn-warning">Warning
+                                        </button>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <button name="color" type="button" class="btn btn-danger btn-block"
+                                                data-value="5" value="btn-danger">Danger
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <p class="no-bottom">
-                                <a href="#" class="btn btn-primary btn-block" data-toggle="button">Full
-                                    width</a>
-                            </p>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-fullscreen"></span>&nbsp;&nbsp;Size
+                            </h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <div id="sizes">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <button class="btn btn-xs btn-primary btn-block" data-value="0"
+                                                type="button">X-Small
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <button class="btn btn-sm btn-primary btn-block" data-value="1"
+                                                type="button">Small
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <button class="btn btn-primary btn-block" data-value="2"
+                                                type="button">Default
+                                        </button>
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <button class="btn btn-primary btn-lg btn-block" data-value="3"
+                                                type="button">Large
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <p class="no-bottom">
+                                    <a href="#" class="btn btn-primary btn-block" data-toggle="button">Full
+                                        width</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="well">
-                <h4 class="top">
-                    <span class="glyphicon glyphicon-picture"></span> Icon
-                </h4>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;Icon
+                    </h3>
+                </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="icons">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input id="search" type="text" autocomplete="off"
-                                           placeholder="Search icon" class="typeahead form-control">
-                                </div>
-
-                                <div class="col-md-6" style="text-align: right">
-                                    Icon position:
-                                    <div id="icon-position" class="btn-group">
-                                        <button class="btn btn-default" value="left"
-                                                type="button"><span
-                                                class="glyphicon glyphicon-arrow-left"></span> Left
-                                        </button>
-                                        <button class="btn btn-default" value="right" type="button">
-                                            Right
-                                            <span class="glyphicon glyphicon-arrow-right"></span>
-                                        </button>
-                                    </div>
-                                </div>
+                <div class="panel-body">
+                    <div id="icons">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <a href="#" class="btn btn-danger" id="remove-icon" title="Remove Icon">
+                                    Remove icon
+                                </a>
                             </div>
 
-                            <div class="row has-top">
-                                <div class="col-md-12">
-                                    <ul class="bs-glyphicons">Loading...</ul>
+                            <div class="col-lg-7">
+                                <input id="search" type="text" autocomplete="off"
+                                       placeholder="Search icon" class="typeahead form-control">
+                            </div>
+
+                            <div class="col-lg-3 text-right">
+                                <div id="icon-position" class="btn-group">
+                                    <button class="btn btn-default" value="left" type="button">
+                                        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;&nbsp;Left icon
+                                    </button>
+                                    <button class="btn btn-default" value="right" type="button">
+                                        Right icon&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>
+                                    </button>
                                 </div>
                             </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-12 bs-icons">Loading...</div>
                         </div>
                     </div>
                 </div>

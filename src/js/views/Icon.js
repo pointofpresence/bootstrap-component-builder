@@ -12,7 +12,8 @@ define("views/Icon", [
         template: templates.Icons,
 
         events: {
-            "click .bs-glyphicons a":      "update",
+            "click #remove-icon":          "clear",
+            "click .bs-icons a":           "update",
             "click #icon-position button": "updatePosition",
             "click #icon-color button":    "updateColor",
             "change input#search":         "updateFromSearch"
@@ -23,7 +24,7 @@ define("views/Icon", [
         },
 
         render: function () {
-            this.$(".bs-glyphicons").html(this.template({icons: icons}));
+            this.$(".bs-icons").html(this.template({icons: icons}));
             return this;
         },
 
@@ -35,13 +36,13 @@ define("views/Icon", [
             });
         },
 
+        clear: function (e) {
+            e.preventDefault();
+            this.model.set({icon: ""});
+        },
+
         update: function (e) {
             e.preventDefault();
-
-            if ($(e.currentTarget).find("span").hasClass('empty-icon')) {
-                this.model.set({icon: ""});
-                return;
-            }
 
             this.model.set({
                 icon: $(e.currentTarget).find("span").attr("class")
