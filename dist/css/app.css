@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2015 pointofpresence
  * bootstrap-component-builder - Online component builder for Bootstrap 3
- * @version v1.0.20
+ * @version v1.0.21
  * @link https://github.com/pointofpresence/bootstrap-component-builder
  * @license MIT
  */
-.no-bottom{margin-bottom:0}.bs-icons a{width:4%}
+.no-bottom,#button>.progress,#button>.list-group,#button>.jumbotron,#button>.panel,#button>.panel-group,#button>.breadcrumb,#button>.well,#button>h3,#button>nav,#button>nav .pagination,#button>nav .pager,#button>.page-header,#button>.row .thumbnail,#button>.alert{margin-bottom:0}#button>h3,#button>.page-header,#button>.page-header h1,#button>nav .pager,#button>nav .pagination{margin-top:0}#tab-settings select{color:#000}.bs-icons a{width:4%}

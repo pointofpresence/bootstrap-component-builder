@@ -11,7 +11,7 @@
         <title>Component builder for Bootstrap 3</title>
 
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet"
+        <link id="bootstrap" rel="stylesheet"
               href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
         <link rel="stylesheet"
@@ -78,10 +78,16 @@
                                             <a href="#tab-component" aria-controls="component" role="tab"
                                                data-toggle="tab" class="result-tab">Components</a>
                                         </li>
+
                                         <li role="presentation">
                                             <a href="#tab-snippet" aria-controls="snippet" role="tab"
                                                data-toggle="tab" class="result-tab">JS</a>
                                         </li>
+
+                                        <!--li role="presentation">
+                                            <a href="#tab-settings" aria-controls="settings" role="tab"
+                                               data-toggle="tab" class="result-tab">Settings</a>
+                                        </li-->
                                     </ul>
 
                                     <!-- Tab panes -->
@@ -97,10 +103,21 @@
                                                 <div class="form-group">Loading...</div>
                                             </form>
                                         </div>
+
+                                        <!-- div role="tabpanel" class="tab-pane" id="tab-settings">
+                                            <br>
+
+                                            <form role="form">
+                                                <div class="form-group">
+                                                    <label for="theme">Select theme</label>
+                                                    <select class="form-control" id="theme">
+                                                        <option value="">Default</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div -->
                                     </div>
                                 </div>
-
-                                <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
@@ -267,7 +284,7 @@
         </div>
 
         <footer class="footer">
-            <div class="container" style="text-align: center;padding-top: 10px;">
+            <div class="container">
                 <script type="text/javascript" src="//yastatic.net/share/share.js"
                         charset="utf-8"></script>
 
