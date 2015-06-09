@@ -19,6 +19,7 @@ define("views/Button", [
             this.render();
             this.$("#type-" + this.model.get("gadget")).prop("checked", true);
 
+            /*
             $.get("http://api.bootswatch.com/3/", (function (data) {
                 this.themes = data.themes;
                 var select = this.$("#theme");
@@ -35,6 +36,7 @@ define("views/Button", [
                     this.setTheme(select.val());
                 }
             }).bind(this), "json");
+            */
         },
 
         events: {
