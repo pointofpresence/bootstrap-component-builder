@@ -94,6 +94,11 @@ function buildHtml() {
 
     gulp.src("./index-src.html")
         .pipe(replace("/src/js/main", "/dist/js/modules"))
+        .pipe(replace("##TITLE##", pkg.title))
+        .pipe(replace("##DESCRIPTION##", pkg.description))
+        .pipe(replace("##AUTHOR##", pkg.author))
+        .pipe(replace("##REPOSITORY##", pkg.repository))
+        .pipe(replace("##VERSION##", pkg.version))
         .pipe(minifyHTML(opts))
         .pipe(out("./index.html"));
 }
