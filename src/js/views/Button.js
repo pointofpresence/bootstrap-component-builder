@@ -4,8 +4,9 @@ define("views/Button", [
     "jquery",
     "underscore",
 
-    "lib/Components"
-], function (Backbone, templates, $, _, components) {
+    "lib/Components",
+    "lib/Taber"
+], function (Backbone, templates, $, _, components, taber) {
     "use strict";
 
     return Backbone.View.extend({
@@ -20,23 +21,23 @@ define("views/Button", [
             this.$("#type-" + this.model.get("gadget")).prop("checked", true);
 
             /*
-            $.get("http://api.bootswatch.com/3/", (function (data) {
-                this.themes = data.themes;
-                var select = this.$("#theme");
+             $.get("http://api.bootswatch.com/3/", (function (data) {
+             this.themes = data.themes;
+             var select = this.$("#theme");
 
-                this.themes.forEach(function (value, index) {
-                    select.append($("<option />")
-                        .val(index)
-                        .text(value.name));
-                });
+             this.themes.forEach(function (value, index) {
+             select.append($("<option />")
+             .val(index)
+             .text(value.name));
+             });
 
-                if (localStorage.theme) {
-                    this.setTheme(localStorage.theme);
-                } else {
-                    this.setTheme(select.val());
-                }
-            }).bind(this), "json");
-            */
+             if (localStorage.theme) {
+             this.setTheme(localStorage.theme);
+             } else {
+             this.setTheme(select.val());
+             }
+             }).bind(this), "json");
+             */
         },
 
         events: {
@@ -101,7 +102,7 @@ define("views/Button", [
             var e = t(d);
 
             this.$("#button").html(e);
-            this.$("#output").val(e);
+            this.$("#output").val(taber.run(e));
 
             if (this.components[this.model.get("gadget")]["url"]) {
                 this.$("#button").append(
