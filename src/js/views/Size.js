@@ -8,8 +8,8 @@ define("views/Size", [
         el: "#sizes",
 
         events: {
-            "click button":     "open",
-            "click .btn-block": "toggle"
+            "click button":        "open",
+            "click #button-block": "toggle"
         },
 
         open: function (e) {
