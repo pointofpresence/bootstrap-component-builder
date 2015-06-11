@@ -1,0 +1,40 @@
+DirectoryIndex index.html index.php
+
+AddDefaultCharset utf-8
+
+php_value upload_max_filesize           100M
+php_value post_max_size                 100M
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/css
+  <IfModule mod_setenvif.c>
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  </IfModule>
+</IfModule>
+
+<ifmodule mod_gzip.c>
+    mod_gzip_on Yes
+    mod_gzip_item_include file \.js$
+    mod_gzip_item_include file \.css$
+</IfModule>
+
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+</ifModule>
+
+Options +FollowSymlinks
+Options -Indexes
