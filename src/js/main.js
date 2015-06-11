@@ -70,6 +70,8 @@ require([
             e.preventDefault();
         });
 
+        // bs components
         $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
     });
 });

@@ -159,6 +159,8 @@ gulp.task("watch", function () {
     gulp.watch(srcJs + lib + "/**/*.js", ["build_amd"]);
     gulp.watch(srcJs + models + "/**/*.js", ["build_amd"]);
     gulp.watch(srcJs + views + "/**/*.js", ["build_amd"]);
+    gulp.watch(srcJs + "/main.js", ["build_amd"]);
+    gulp.watch(srcJs + "/templates.js", ["build_amd"]);
 });
 
 gulp.task("build", function () {
