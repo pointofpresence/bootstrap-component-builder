@@ -19,49 +19,11 @@ define("views/Button", [
             this.firstTime = true;
             this.render();
             this.$("#type-" + this.model.get("gadget")).prop("checked", true);
-
-            /*
-             $.get("http://api.bootswatch.com/3/", (function (data) {
-             this.themes = data.themes;
-             var select = this.$("#theme");
-
-             this.themes.forEach(function (value, index) {
-             select.append($("<option />")
-             .val(index)
-             .text(value.name));
-             });
-
-             if (localStorage.theme) {
-             this.setTheme(localStorage.theme);
-             } else {
-             this.setTheme(select.val());
-             }
-             }).bind(this), "json");
-             */
         },
 
         events: {
             "click #output":  "selectOutput",
-            "change #theme":  "onThemeChange",
             "change .gadget": "setGadget"
-        },
-
-        onThemeChange: function (e) {
-            this.setTheme($(e.currentTarget).val());
-        },
-
-        setTheme: function (name) {
-            localStorage.theme = name;
-            var css = null;
-
-            if (name) {
-                var theme = this.themes[name];
-                css = theme.css;
-            } else {
-                css = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css";
-            }
-
-            $("link#bootstrap").attr("href", css);
         },
 
         setGadget: function (e) {
@@ -91,7 +53,7 @@ define("views/Button", [
 
             var d = {
                 type:          this.components[this.model.get("gadget")]["color"][this.model.get("type")],
-                size:          this.components[this.model.get("gadget")]["size"][this.model.get("size")],
+                size:          this.components[this.model.get("gadget")]["size"][this.model.get("size")] || "",
                 fullwidth:     this.model.get("fullwidth"),
                 iconplacement: this.model.get("iconplacement"),
                 icon:          this.model.get("icon"),
